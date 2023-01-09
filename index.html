@@ -1,14 +1,141 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns:padding-top="http://www.w3.org/1999/xhtml" xmlns:margin-top="http://www.w3.org/1999/xhtml"
+      xmlns:-webkit-background-clip="http://www.w3.org/1999/xhtml" xmlns:background-clip="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elena Chertova Work Examples</title>
+    <meta name="description" content="Elena Chertova Work Examples">
+    <meta name="author" content="Elena Chertova">
+
+    <link rel="stylesheet" href="style.css?">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+
+</head>
+
 <body>
 
-<div data-layout="BIG_ICON_DETAILS_SUBTOTAL" data-responsive="FALSE" class="ec-cart-widget"></div>
-  <div>
-  <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?83258791&data_platform=code&data_date=2022-12-14" charset="utf-8"></script>
-  <script type="text/javascript">Ecwid.init();</script><div id="my-store-83258791"></div>
-<div>
-<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?83258791&data_platform=code&data_date=2022-12-14" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-83258791");</script>
-</div>
+    <div class="navbar clear nav-top">
+        <div class="row content">
+            <h1>Correct your code with IntelliJ IDEA</h1>
+        </div>
+    </div>
+
+    <div class="container clear">
+        <div class="row wrapper">
+
+            <div class="sidepanel">
+
+                <a class="title" href="#doctitle">XML File Migration from XMetal into Flare</a>
+                <a class="section" href="#before">Before You Begin</a>
+                <a class="section" href="#exportfiles">Export XML Files from XMetal</a>
+                <a class="section" href="#importfiles">Import XML Files into Flare</a>
+                <a class="section" href="#problemstool">Using the Problems window</a>
+                <a class="section" href="#fixerror">Fix an error</a>
+
+                <div class="divider left"></div>
+
+                <a class="title" href="#debugintro">Debug your Java programs</a>
+                <a class="section" href="#detecterrors">Detect possible errors</a>
+                <a class="section" href="#setbreakpoint">Set a breakpoint and run the program in debug mode</a>
+                <a class="section" href="#analyzeprogram">Analyze the program state</a>
+                <a class="section" href="#stepthrough">Step through the program</a>
+                <a class="section" href="#rerun">Rerun the program</a>
+
+                <div class="divider left"></div>
+
+                <a class="title" href="#credits">Credits</a>
+
+             <div class="space double"></div>
+
+            </div>
+
+            <div class="right-col">
+
+                <h1 id="doctitle">XML File Migration from XMetal into Flare</h1>
+                <p>This document guides you through the process of moving XML files from the legacy documenta:on system into a Flare project. You can use it when you need to migrate the documents that do not need much rework on the structure and style.</p>
+
+                <h2 id="before">Before You Begin</h2>
+                <p>The import process may bring in additional CSS styles we do not use. To avoid overwriting the existing styles, you should work on imported files in a local project (we refer to it as “sandbox”).</p>
+                <p>To create a sandbox project, copy the template project from Git and put it into a chosen folder on your machine.</p>
+
+                <h2 id="exportfiles">Export XML Files from XMetal</h2>
+                <p>First, you export the necessary files from the SharePoint library using the export feature in XMetal.</p>
+
+                <ol>
+                  <li>Launch XMetal as Administrator and select <b>Repository > Open from Repository</b>.</li>
+                  <li>Right-click the folder you want to export and select <b>Export</b>.
+                        <p><img src="Images/img_01_XMetalExport.png" width="70" class="imgborder"></p>
+                  </li>
+                  <li>Select a folder for exported files on your machine and click <b>OK</b>. Wait while the application completes the process.</li>
+                </ol>
+
+                <div class="divider" style="width:50%; margin:30px 0;"></div>
+
+                <h2 id="importfiles">Import XML Files into Flare</h2>
+
+                <p>The legacy system used the DITA format for structuring the XML files, so you use the DITA import feature in Flare that simplifies conversion of such files.</p>
+                <ol>
+                  <li>Open your sandbox project in Flare. DO NOT import the files to projects connected to Git.</li>
+                  <li>On the <b>Project</b> tab, select <b>Import > DITA Document Set</b>.
+                    <p><img src="Images/img_02_ImportDitaDocSet.png" width="70" class="imgborder"></p>
+                  </li>
+                  <li>Select the <b>Import into this project</b> option and click <b>Next</b>.</li>
+                  <li>In the Select DITA Documents to import dialog, click the <b>+</b> button and browse to the files exported from XMetal. Use <b>SHIFT+Click</b> to select multiple files.</li>
+                  <li>Clear the <b>Link generated files to source files</b> check box. Click <b>Next</b>.
+                    <p><img src="Images/img_03_SelectImportFiles.png" width="200" class="imgborder"></p>
+                  </li>
+                  <li>In the Options dialog, keep the <b>Import all Content files to one folder</b> check box selected.
+                    <p><img src="Images/img_04_FlareImportOptions.png" width="70" class="imgborder"></p>
+                  </li>
+                  <li>In the Stylesheet dialog, click <b>Conversion Styles</b>.</li>
+                  <li>In the DITA Import Styles Editor, the <b>Styles</p> pane displays the tags that may be part of you XMetal files. You need to adjust their markup proper:es for the applica:on to convert the XML tags correctly.
+                    <p>For example, under <b>concept</b>, select <b>concept</b> and change the <b>XhtmlTag</b> value to <b>p</b>.</p>
+                    <p><img src="Images/img_05_StyleConfig.png" width="200" class="imgborder"></p>
+                    <p>The below table includes the list of the most used tags and their properties that you should change.</p>
+                    <table>
+                      <tr>
+                        <th>Tag</th>
+                        <th>Values</th>
+                      </tr>
+                      <tr>
+                        <td>concept > concept</td>
+                        <td>XhtmlTag: p</td>
+                      </tr>
+                      <tr>
+                        <td>note > Note, NoteImportant, NoteTip</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </li>
+
+                <h1 id="credits">Credits</h1>
+                <p>Base template: <a href="https://github.com/charlyllo/doctemplate">https://github.com/charlyllo/doctemplate</a>.</p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 
 </body>
+
 </html>
