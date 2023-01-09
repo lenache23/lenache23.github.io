@@ -40,6 +40,14 @@ p {
     line-height: 22px;
 }
 
+ol {
+    line-height: 22px;
+}
+
+li {
+    padding-top: 10px
+}
+
 a {
     text-decoration: none;
 }
@@ -49,13 +57,34 @@ code {
     display: block;
     font-size: 16px;
 }
+
+table, td, th {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  column-width: 500px
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: darkmagenta;
+  color: white;
+  padding: 8px
+}
+
+td {
+  padding: 8px
+}
+
 .imgborder {
     border: 0.5px solid lightgrey;
 }
 
 .note {
     background-color: lightgrey;
-    padding: 0 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
 }
 
 .codeelement {

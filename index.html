@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="style.css?">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/c8f7526298.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -24,7 +23,7 @@
 
     <div class="navbar clear nav-top">
         <div class="row content">
-            <h1>Correct your code with IntelliJ IDEA</h1>
+            <h1>Elena Chertova Work Examples</h1>
         </div>
     </div>
 
@@ -34,20 +33,13 @@
             <div class="sidepanel">
 
                 <a class="title" href="#doctitle">XML File Migration from XMetal into Flare</a>
-                <a class="section" href="#before">Before You Begin</a>
-                <a class="section" href="#exportfiles">Export XML Files from XMetal</a>
-                <a class="section" href="#importfiles">Import XML Files into Flare</a>
-                <a class="section" href="#problemstool">Using the Problems window</a>
-                <a class="section" href="#fixerror">Fix an error</a>
-
-                <div class="divider left"></div>
-
-                <a class="title" href="#debugintro">Debug your Java programs</a>
-                <a class="section" href="#detecterrors">Detect possible errors</a>
-                <a class="section" href="#setbreakpoint">Set a breakpoint and run the program in debug mode</a>
-                <a class="section" href="#analyzeprogram">Analyze the program state</a>
-                <a class="section" href="#stepthrough">Step through the program</a>
-                <a class="section" href="#rerun">Rerun the program</a>
+                <a class="section" href="#before">Before you begin</a>
+                <a class="section" href="#exportfiles">Export files from XMetal</a>
+                <a class="section" href="#importfiles">Import files into Flare</a>
+                <a class="section" href="#cleanup">Clean up imported files</a>
+                <a class="section" href="#restoreimg">Restore images</a>
+                <a class="section" href="#formattables">Format imported tables</a>
+                <a class="section" href="#movetoproduction">Move files to production</a>
 
                 <div class="divider left"></div>
 
@@ -60,44 +52,44 @@
             <div class="right-col">
 
                 <h1 id="doctitle">XML File Migration from XMetal into Flare</h1>
-                <p>This document guides you through the process of moving XML files from the legacy documenta:on system into a Flare project. You can use it when you need to migrate the documents that do not need much rework on the structure and style.</p>
+                <p>This document guides you through the process of moving XML files from the legacy documentation system into a Flare project. You can use it when you need to migrate the documents that do not need much rework on the structure and style.</p>
 
-                <h2 id="before">Before You Begin</h2>
+                <h2 id="before">Before you begin</h2>
                 <p>The import process may bring in additional CSS styles we do not use. To avoid overwriting the existing styles, you should work on imported files in a local project (we refer to it as “sandbox”).</p>
                 <p>To create a sandbox project, copy the template project from Git and put it into a chosen folder on your machine.</p>
 
-                <h2 id="exportfiles">Export XML Files from XMetal</h2>
+                <h2 id="exportfiles">Export files from XMetal</h2>
                 <p>First, you export the necessary files from the SharePoint library using the export feature in XMetal.</p>
 
                 <ol>
                   <li>Launch XMetal as Administrator and select <b>Repository > Open from Repository</b>.</li>
                   <li>Right-click the folder you want to export and select <b>Export</b>.
-                        <p><img src="Images/img_01_XMetalExport.png" width="150" class="imgborder"></p>
+                        <p><img src="Images/img_01_XMetalExport.png" width="200" class="imgborder"></p>
                   </li>
                   <li>Select a folder for exported files on your machine and click <b>OK</b>. Wait while the application completes the process.</li>
                 </ol>
 
-                <h2 id="importfiles">Import XML Files into Flare</h2>
+                <h2 id="importfiles">Import files into Flare</h2>
 
-                <p>The legacy system used the DITA format for structuring the XML files, so you use the DITA import feature in Flare that simplifies conversion of such files.</p>
+                <p>The legacy system uses DITA for structuring XML files, so to import the files to Flare, you use the DITA import feature that simplifies the conversion of such files.</p>
                 <ol>
                   <li>Open your sandbox project in Flare. DO NOT import the files to projects connected to Git.</li>
                   <li>On the <b>Project</b> tab, select <b>Import > DITA Document Set</b>.
-                    <p><img src="Images/img_02_ImportDitaDocSet.png" width="150" class="imgborder"></p>
+                    <p><img src="Images/img_02_ImportDitaDocSet.png" width="200" class="imgborder"></p>
                   </li>
                   <li>Select the <b>Import into this project</b> option and click <b>Next</b>.</li>
                   <li>In the Select DITA Documents to import dialog, click the <b>+</b> button and browse to the files exported from XMetal. Use <b>SHIFT+Click</b> to select multiple files.</li>
                   <li>Clear the <b>Link generated files to source files</b> check box. Click <b>Next</b>.
-                    <p><img src="Images/img_03_SelectImportFiles.png" width="400" class="imgborder"></p>
+                    <p><img src="Images/img_03_SelectImportFiles.png" width="500" class="imgborder"></p>
                   </li>
                   <li>In the Options dialog, keep the <b>Import all Content files to one folder</b> check box selected.
-                    <p><img src="Images/img_04_FlareImportOptions.png" width="150" class="imgborder"></p>
+                    <p><img src="Images/img_04_FlareImportOptions.png" width="200" class="imgborder"></p>
                   </li>
                   <li>In the Stylesheet dialog, click <b>Conversion Styles</b>.</li>
-                  <li>In the DITA Import Styles Editor, the <b>Styles</b> pane displays the tags that may be part of you XMetal files. You need to adjust their markup proper:es for the applica:on to convert the XML tags correctly.
+                  <li>In the DITA Import Styles Editor, the <b>Styles</b> pane displays the tags that may be part of you XMetal files. You need to adjust their markup properties for the application to convert the XML tags correctly.
                     <p>For example, under <b>concept</b>, select <b>concept</b> and change the <b>XhtmlTag</b> value to <b>p</b>.</p>
-                    <p><img src="Images/img_05_StyleConfig.png" width="400" class="imgborder"></p>
-                    <p>The below table includes the list of the most used tags and their properties that you should change.</p>
+                    <p><img src="Images/img_05_StyleConfig.png" width="500" class="imgborder"></p>
+                    <p>The below table includes the list of the most used tags and the new markup properties that you should assign to them.</p>
                     <table>
                       <tr>
                         <th>Tag</th>
@@ -109,21 +101,138 @@
                       </tr>
                       <tr>
                         <td>note > Note, NoteImportant, NoteTip</td>
-                        <td></td>
+                        <td>XhtmlTag: p</td>
                       </tr>
                       <tr>
-                        <td></td>
-                        <td></td>
+                        <td>task > context, info, postreq, prereq, result, stepresult, task</td>
+                        <td>XhtmlTag: p</td>
                       </tr>
                       <tr>
-                        <td></td>
-                        <td></td>
+                        <td>tblDecl > entry</td>
+                        <td>XhtmlTag: td
+                            <p>Class: table--bordered</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>tblDecl > table</td>
+                        <td>XhtmlTag: table
+                            <p>Class: table</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>tblDecl > tbody</td>
+                        <td>XhtmlTag: tbody
+                          <p>Class: table--bordered</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>tblDecl > thead</td>
+                        <td>XhtmlTag: thead
+                          <p>Class: table--color-header</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Title > ConceptTitle, TaskTitle</td>
+                        <td>XhtmlTag: h1
+                          <p>Class: firstH1</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>topic > abstract, example, section, shortdesc, topic</td>
+                        <td>XhtmlTag: p</td>
                       </tr>
                     </table>
                   </li>
-
-                <h1 id="credits">Credits</h1>
-                <p>Base template: <a href="https://github.com/charlyllo/doctemplate">https://github.com/charlyllo/doctemplate</a>.</p>
+                  <li>When you are done, click <b>OK</b> to close the style editor. Then click <b>Finish</b>.</li>
+                  <li>When the import process completes, preview the files and select <b>Accept</b>.</li>
+                </ol>
+                <h2 id="cleanup">Clean up imported files</h2>
+                <p>The converted files have obsolete classes and tags you need to clean up or replace. You can handle these mass updates in the plain text editor.</p>
+                <ol>
+                  <li>Navigate to the folder where you imported the files.</li>
+                  <li>Delete the .css file in the folder and in the Link Update dialog, select <b>Remove Links</b>.</li>
+                  <li>Open any file in the imported folder and switch to the <b>Text Editor</b> view.</li>
+                  <li>On the <b>Home</b> tab, select <b>Find and Replace</b>.</li>
+                  <li>On the <b>Find Elements</b> tab, under <b>Find</b>, select <b>Tag</b> and in the filed to the right, enter <b>span</b>.</li>
+                  <li>Under <b>Replace/Action</b>, select <b>Unbind Tag</b>.</li>
+                  <li>Under <b>Find in</b>, select <b>documents in the same folder</b> and then select <b>Replace All</b>.
+                    <p><img src="Images/img_06_UnbindSpan.png" width="400" class="imgborder"></p>
+                  </li>
+                  <li>Select the <b>Find Text</b> tab. Under <b>Find in</b>, select <b>documents in the same folder</b>.</li>
+                  <li>Under <b>Options</b>, select <b>Find in source code</b>.
+                    <p><img src="Images/img_07_ReplaceClasses.png" width="400" class="imgborder"></p>
+                  </li>
+                  <li>Replace the following classes with a blank value (note, there’s a space before <b>class</b>):
+                    <p> class="task"</p>
+                    <p> class="taskbody"</p>
+                    <p> class="context"</p>
+                    <p> class="steps"</p>
+                    <p> class="substep"</p>
+                    <p> class="info"</p>
+                    <p> class="result"</p>
+                    <p> class="concept"</p>
+                    <p> class="conbody"</p>
+                  </li>
+                  <li>Make the following replacements:
+                    <table>
+                      <tr>
+                        <th>Find</th>
+                        <th>Replace</th>
+                      </tr>
+                      <tr>
+                        <td>class="note"</td>
+                        <td>class="epnote"</td>
+                      </tr>
+                      <tr>
+                        <td>class="noteImportant"</td>
+                        <td>class="epnote-a"</td>
+                      </tr>
+                      <tr>
+                        <td>class="noteTip"</td>
+                        <td>class="epnote-opt"</td>
+                      </tr>
+                      <tr>
+                        <td>class="substeps"</td>
+                        <td>style="list-style-type: lower-alpha;"</td>
+                      </tr>
+                    </table>
+                </li>
+                </ol>
+                <h2 id="restoreimg">Restore images</h2>
+                <p>If the files you imported had images, their references are preserved as they were in the original files, pointing to the SharePoint library. You can change the references to link to the images with the same names in the current Flare project.</p>
+                <p>Afer you update the image references, you also need to assign them with the standard class.</p>
+                <ol>
+                  <li>Create a folder under <b>Content/Resources/Images</b> and copy the images imported from XMetal into it. If needed, add the necessary name prefixes.</li>
+                  <li>Open a file that includes any image in the <b>Text Editor</b> view and locate the image reference.</li>
+                  <li>Insert an image from the he folder where you copied the exported images into the file to see what the new reference should look like.
+                    <p><img src="Images/img_08_ImageLinks.png" width="800" class="imgborder"></p>
+                  </li>
+                  <li>Copy the SharePoint path to the file and use Find and Replace to update the path.
+                    <p>For example, if you updated the image name prefixes, you may need to make the following replacement:</p>
+                    <p><b>https://sharepoint/sites/education/contentlibrary/Installation/img_</b></p>
+                    <p>to</p>
+                    <p><b>../Resources/Images/InstallaLon/install_</b></p>
+                    <div class="note"><img src="Images/TipIconGrey.png" width="30" class="imgborder">If all your images were in the same folder, you can mass-replace the references using <b>Replace All</b>.</div>
+                </li>
+                <li>After you replace the references, switch to the <b>XML Editor</b> view to check if the images display in the file. If this does not happen, verify the links and image names are correct.</li>
+                <li>Now you need to assign the standard class to the images. To do this for multiple images at once, go to <b>Find and Replace > Find Elements</b>.</li>
+                <li>Under <b>Find</b>, select <b>Tag</b> and set it to <b>img</b>.</li>
+                <li>Under <b>Replace/Action</b>, select <b>Add Class</b> and in the field to the right, enter <b>image-with-border</b>.
+                  <p><img src="Images/img_09_ImageStyle.png" width="400" class="imgborder"></p>
+                </li>
+                <li>Verify <b>Find in</b> is set to documents in the same folder and select <b>Replace All</b>.</li>
+              </ol>
+              <h2 id="formattables">Format imported tables</h2>
+              <p>The look of the imported tables may differ depending on the type they had in the XMetal file.</p>
+              <p><b>Normal</b> tables have the necessary classes assigned during the import and display as needed, however they may have additional styles assigned to rows and columns. You may need to review and clean them up.</p>
+              <p><b>Simpletables</b> do not get assigned with the necessary classes during the import and do not include the <col> tag, so you need to recreate them from the standard template.</p>
+              <h2 id="movetoproduction">Move files to production</h2>
+              <p>When you complete conversion and cleanup, you can move the XML files and images to your production project. You can then attach them to an existing TOC or create a new one.</p>
+              <div class="note">
+                <i class="fa-thin fa-lightbulb-on"></i>Note that all references in the files (images, snippets, and so on) rely on the Content folder structure. It is important that you copy the files to a folder on the same level as where they were in your sandbox project.
+              </div>
+              <h1 id="credits">Credits</h1>
+              <p>Base template: <a href="https://github.com/charlyllo/doctemplate">https://github.com/charlyllo/doctemplate</a>.</p>
 
 
             </div>
