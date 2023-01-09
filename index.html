@@ -8,14 +8,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Elena Chertova Work Examples</title>
+    <title>EC Work</title>
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
     <meta name="description" content="Elena Chertova Work Examples">
     <meta name="author" content="Elena Chertova">
 
     <link rel="stylesheet" href="style.css?">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/c8f7526298.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 
 </head>
 
@@ -55,7 +56,7 @@
                 <p>This document guides you through the process of moving XML files from the legacy documentation system into a Flare project. You can use it when you need to migrate the documents that do not need much rework on the structure and style.</p>
 
                 <h2 id="before">Before you begin</h2>
-                <p>The import process may bring in additional CSS styles we do not use. To avoid overwriting the existing styles, you should work on imported files in a local project (we refer to it as “sandbox”).</p>
+                <p>The import process may bring in additional CSS styles that our . To avoid overwriting the existing styles, you should work in a local project (we refer to it as “sandbox”).</p>
                 <p>To create a sandbox project, copy the template project from Git and put it into a chosen folder on your machine.</p>
 
                 <h2 id="exportfiles">Export files from XMetal</h2>
@@ -147,13 +148,13 @@
                   <li>When the import process completes, preview the files and select <b>Accept</b>.</li>
                 </ol>
                 <h2 id="cleanup">Clean up imported files</h2>
-                <p>The converted files have obsolete classes and tags you need to clean up or replace. You can handle these mass updates in the plain text editor.</p>
+                <p>The converted files have obsolete classes and tags you need to clean up or replace. You can handle this by mass updating the tags in the plain text editor.</p>
                 <ol>
                   <li>Navigate to the folder where you imported the files.</li>
                   <li>Delete the .css file in the folder and in the Link Update dialog, select <b>Remove Links</b>.</li>
                   <li>Open any file in the imported folder and switch to the <b>Text Editor</b> view.</li>
                   <li>On the <b>Home</b> tab, select <b>Find and Replace</b>.</li>
-                  <li>On the <b>Find Elements</b> tab, under <b>Find</b>, select <b>Tag</b> and in the filed to the right, enter <b>span</b>.</li>
+                  <li>On the <b>Find Elements</b> tab, under <b>Find</b>, select <b>Tag</b> and in the field to the right, enter <b>span</b>.</li>
                   <li>Under <b>Replace/Action</b>, select <b>Unbind Tag</b>.</li>
                   <li>Under <b>Find in</b>, select <b>documents in the same folder</b> and then select <b>Replace All</b>.
                     <p><img src="Images/img_06_UnbindSpan.png" width="400" class="imgborder"></p>
@@ -204,10 +205,10 @@
                 <ol>
                   <li>Create a folder under <b>Content/Resources/Images</b> and copy the images imported from XMetal into it. If needed, add the necessary name prefixes.</li>
                   <li>Open a file that includes any image in the <b>Text Editor</b> view and locate the image reference.</li>
-                  <li>Insert an image from the he folder where you copied the exported images into the file to see what the new reference should look like.
+                  <li>Insert an image from the project folder into the file to see what the new reference should look like.
                     <p><img src="Images/img_08_ImageLinks.png" width="800" class="imgborder"></p>
                   </li>
-                  <li>Copy the SharePoint path to the file and use Find and Replace to update the path.
+                  <li>Copy the SharePoint path to the file and use <b>Find and Replace</b> to update the path.
                     <p>For example, if you updated the image name prefixes, you may need to make the following replacement:</p>
                     <p><b>https://sharepoint/sites/education/contentlibrary/Installation/img_</b></p>
                     <p>to</p>
@@ -229,7 +230,7 @@
               <h2 id="movetoproduction">Move files to production</h2>
               <p>When you complete conversion and cleanup, you can move the XML files and images to your production project. You can then attach them to an existing TOC or create a new one.</p>
               <div class="note">
-                <i class="fa-thin fa-lightbulb-on"></i>Note that all references in the files (images, snippets, and so on) rely on the Content folder structure. It is important that you copy the files to a folder on the same level as where they were in your sandbox project.
+                <img src="Images/TipIconGrey.png" width="30" class="imgborder"></i>Note that all references in the files (images, snippets, and so on) rely on the Content folder structure. It is important that you copy the files to a folder on the same level as where they were in your sandbox project.
               </div>
               <h1 id="credits">Credits</h1>
               <p>Base template: <a href="https://github.com/charlyllo/doctemplate">https://github.com/charlyllo/doctemplate</a>.</p>
