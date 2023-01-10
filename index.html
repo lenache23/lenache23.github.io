@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>EC Work</title>
-    <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
+    <link rel="icon" type="image/ico" href="Images/favicon.ico">
     <meta name="description" content="Elena Chertova Work Examples">
     <meta name="author" content="Elena Chertova">
 
@@ -53,14 +53,14 @@
             <div class="right-col">
 
                 <h1 id="doctitle">XML File Migration from XMetal into Flare</h1>
-                <p>This document guides you through the process of moving XML files from the legacy documentation system into a Flare project. You can use it when you need to migrate the documents that do not need much rework on the structure and style.</p>
+                <p>This tutorial explains how to move XML files from the legacy documentation system into a Flare project. You can use it to migrate the documents that do not need much rework on the structure and style.</p>
 
                 <h2 id="before">Before you begin</h2>
-                <p>The import process may bring in additional CSS styles that our . To avoid overwriting the existing styles, you should work in a local project (we refer to it as “sandbox”).</p>
+                <p>The import process may bring in additional CSS styles that the Flare project does not support. To avoid overwriting the existing styles, you should work in a local project (referred to as “sandbox”).</p>
                 <p>To create a sandbox project, copy the template project from Git and put it into a chosen folder on your machine.</p>
 
                 <h2 id="exportfiles">Export files from XMetal</h2>
-                <p>First, you export the necessary files from the SharePoint library using the export feature in XMetal.</p>
+                <p>First, you copy the necessary files from the SharePoint library using the export feature in XMetal.</p>
 
                 <ol>
                   <li>Launch XMetal as Administrator and select <b>Repository > Open from Repository</b>.</li>
@@ -148,7 +148,7 @@
                   <li>When the import process completes, preview the files and select <b>Accept</b>.</li>
                 </ol>
                 <h2 id="cleanup">Clean up imported files</h2>
-                <p>The converted files have obsolete classes and tags you need to clean up or replace. You can handle this by mass updating the tags in the plain text editor.</p>
+                <p>Converted files have obsolete classes and tags you need to clean up or replace. You can handle this by mass updating the elements in the plain text editor.</p>
                 <ol>
                   <li>Navigate to the folder where you imported the files.</li>
                   <li>Delete the .css file in the folder and in the Link Update dialog, select <b>Remove Links</b>.</li>
@@ -201,14 +201,14 @@
                 </ol>
                 <h2 id="restoreimg">Restore images</h2>
                 <p>If the files you imported had images, their references are preserved as they were in the original files, pointing to the SharePoint library. You can change the references to link to the images with the same names in the current Flare project.</p>
-                <p>Afer you update the image references, you also need to assign them with the standard class.</p>
+                <p>After you update image references, you also need to assign the image element with the standard class.</p>
                 <ol>
                   <li>Create a folder under <b>Content/Resources/Images</b> and copy the images imported from XMetal into it. If needed, add the necessary name prefixes.</li>
-                  <li>Open a file that includes any image in the <b>Text Editor</b> view and locate the image reference.</li>
+                  <li>Open a file that includes any image using the <b>Text Editor</b> view and locate the image reference.</li>
                   <li>Insert an image from the project folder into the file to see what the new reference should look like.
                     <p><img src="Images/img_08_ImageLinks.png" width="800" class="imgborder"></p>
                   </li>
-                  <li>Copy the SharePoint path to the file and use <b>Find and Replace</b> to update the path.
+                  <li>Copy the SharePoint path and use <b>Find and Replace</b> to change it to the new path.
                     <p>For example, if you updated the image name prefixes, you may need to make the following replacement:</p>
                     <p><b>https://sharepoint/sites/education/contentlibrary/Installation/img_</b></p>
                     <p>to</p>
@@ -225,10 +225,10 @@
               </ol>
               <h2 id="formattables">Format imported tables</h2>
               <p>The look of the imported tables may differ depending on the type they had in the XMetal file.</p>
-              <p><b>Normal</b> tables have the necessary classes assigned during the import and display as needed, however they may have additional styles assigned to rows and columns. You may need to review and clean them up.</p>
-              <p><b>Simpletables</b> do not get assigned with the necessary classes during the import and do not include the <col> tag, so you need to recreate them from the standard template.</p>
+              <p><b>Normal</b> tables have the necessary classes assigned during the import and display as needed; however, they may have additional styles assigned to rows and columns. You may need to review and clean them up.</p>
+              <p><b>Simpletables</b> do not get assigned with the necessary classes during the import and do not include the <b>col</b> tag, so you need to recreate them from the standard template.</p>
               <h2 id="movetoproduction">Move files to production</h2>
-              <p>When you complete conversion and cleanup, you can move the XML files and images to your production project. You can then attach them to an existing TOC or create a new one.</p>
+              <p>When you complete conversion and cleanup, you are ready move the XML files and images to your production project. You can then attach them to an existing TOC or create a new one.</p>
               <div class="note">
                 <img src="Images/TipIconGrey.png" width="30" class="imgborder"></i>Note that all references in the files (images, snippets, and so on) rely on the Content folder structure. It is important that you copy the files to a folder on the same level as where they were in your sandbox project.
               </div>
