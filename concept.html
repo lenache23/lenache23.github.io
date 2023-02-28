@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="assets/images/favicon.ico" rel="icon" />
+<title>Work Example -Concept</title>
+<meta name="description" content="Work Example - Concept">
+<meta name="author" content="Elena Chertova">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/color-orange.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-light">
+      <div class="container-fluid">
+        <!-- Sidebar Toggler -->
+		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+		
+		<!-- Logo --> 
+        <a class="logo ml-md-3" href="concept.html" title="Work Examples"> <img src="assets/images/logo-example-concept.png" width="250" alt="Work Examples - Concept"/> </a> 
+        <!-- Logo End -->
+        
+		<!-- Navbar Toggler -->
+		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
+        
+		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="dropdown"> <a class="dropdown-toggle" href="#">Work Examples</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="concept.html">Concept</a></li>
+                <li><a class="dropdown-item" href="instructions.html">Instructions</a></li>
+              </ul>
+            </li>
+            <li><a target="_blank" href="cv.html"><button type="button" class="btn btn-light">Back to CV</button></a></li>
+          </ul>
+    </nav>
+    <!-- Navbar End --> 
+  </header>
+  <!-- Header End --> 
+  
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-light">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#intro">Introduction</a></li>
+        <li class="nav-item"><a class="nav-link" href="#structure">Protocol Structure</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cryptography">TLS Cryptography</a>
+			  <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#asymmetric">Asymmetric Cryptography</a></li>
+            <li class="nav-item"><a class="nav-link" href="#symmetric">Symmetric Cryptography</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hashing">Hashing Cryptography</a></li>
+            <li class="nav-item"><a class="nav-link" href="#digit_sign">Digital Signatures</a></li>
+        </ul>
+		    </li>
+        <li class="nav-item"><a class="nav-link" href="#components">TLS Components</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#key_exchange">Key Exchange Algorithms</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cipher_suites">Cipher Suites</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sign_algorithms">Signature Algorithms</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ssl_cert">SSL/TLS Certificates</a></li>
+          </ul>
+        </li>
+		    <li class="nav-item"><a class="nav-link" href="#handshake">TLS Hadshake</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resumption">Session Resumption and 0-RTT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#record">Record Protocol</a></li>
+      </ul>
+    </div>
+    
+    <!-- Docs Content
+	============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Intro
+		============================ -->
+    <h1 id="doctitle">How TLS 1.3 Protects Your Data</h1>    
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>The Transport Layer Security (TLS) protocol is a technology designed to protect communication over computer networks. It helps secure the information passed between various network entities, for example, through websites, client-server and web applications, email, instant messaging, voice-over IP, and so on. </p>
+        <p class="alert alert-info">TLS is also referred to by the name of its older version, Secure Socket Layer (SSL).</div>
+        <p>Communication security is essential for organizations that work with sensitive information like personal, business, financial data, and so on. It is in their best interest to ensure that no human or machine can read or change the data they send and receive, even if their network traffic is compromised. They also need to provide identity for the server domains that host their websites and applications. To cover these requirements, TLS offers the following:</p>
+        <ul>
+          <li><b>Confidentiality:</b> encryption scrambles data to protect it from eavesdropping.</li>
+          <li><b>Integrity:</b> message authentication and hashing algorithms help to verify that no one tampers with data in transfer.</li>
+          <li><b>Authentication:</b> computers authenticate their identities with the help of SSL/TLS certificates and digital signatures.</li>
+        </ul>
+        <p class="alert alert-info">The TLS protocol is developed and maintained by the Internet Engineering Task Force (IETF) organization that defines best practices in network security and publishes them in documents called RFC (or Request for Comment). You can find the full specification of TLS 1.3 in RFC 8446 (<a href="url">https://www.rfc-editor.org/rfc/rfc8446</a>).
+        </p>
+        <p>Let’s look into the main ideas, components, and mechanisms behind TLS 1.3, the most recent and secure version of the protocol. </p>
+        </section>
+      <hr class="divider"> 
+
+        <!-- Structure
+		============================ -->
+        <section id="structure"> 
+        <h2>Protocol Structure</h2>
+        <p>Before two computers start exchanging information, they need to establish a connection and verify they can communicate securely. To accommodate that, the TLS protocol includes two phases:</p>
+        <ul>
+          <li>In the <b>handshake</b> phase, computers negotiate cryptographic parameters, generate encryption keys, and perform authentication.</li>
+          <li>In the <b>record</b> phase, computers use the parameters established during the handshake to encrypt the data they exchange and verify its integrity. </li>
+        </ul>
+        <p>The computers that exchange information over a TLS connection are usually referred to as client and server, and client is the computer that initiates communication. 
+        </p>
+        </section>
+		  <hr class="divider">
+		
+        <!-- Cryptography
+		============================ -->
+        <section id="cryptography">
+          <h2>TLS Cryptography</h2>
+          <p>TLS is a cryptographic protocol. It uses secure algorithms to exchange cryptographic keys, and with those keys, it transforms readable data into an unreadable format to protect it from unauthorized access and tampering. These processes involve several types of cryptography.
+          </p>
+          <h3 id="asymmetric">Asymmetric Cryptography</h3>
+          <p>Asymmetric cryptography, or public key cryptography, is based on two mathematically related keys – a private and a public key. The public key can be shared with others while the private key is always kept a secret. TLS uses asymmetric keys in the handshake phase for the following  purposes:
+          </p>
+          <ul>
+            <li><p>In the course of the Diffie-Hellman key exchange algorithm, computers exchange their public keys, and then each of them generates the same shared secret value from its private key and the public key of the other computer.</p>
+              <a class="popup-img" href="assets/images/DiffieHellman.png">
+                <img src="assets/images/DiffieHellman.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+              </a>
+            <li><p>Computers authenticate themselves with the help of digital signatures (link) generated with their private keys. They also distribute their public keys to other entities. Public keys are used to verify digital signatures created with the related private keys. In this case, private keys encrypt data and public keys decrypt it.</p>
+              <a class="popup-img" href="assets/images/DigitalSignGeneral.png">
+                <img src="assets/images/DigitalSignGeneral.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+              </a>
+            </li>
+          </ul>
+          <h3 id="symmetric">Symmetric Cryptography</h3>
+          <p>Symmetric cryptography handles encryption and decryption with a single key or set of keys. TLS uses it in the record phase to protect communication session traffic. This cryptography type is efficient to process large amounts of data, and it is safe as long as only the sender and receiver have the symmetric key that encrypts the data in transfer.
+          </p>
+          <a class="popup-img" href="assets/images/Symmetric.png">
+            <img src="assets/images/Symmetric.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+          <h3 id="hashing">Hashing</h3>
+          <p>Hashing cryptography transforms data of any size into a fixed-length string of characters, also known as a hash value. This value is unique to the data it represents; even a slight change results in a different string of characters. Hashing also works one way: it is easy to calculate a hash value but it is almost impossible to reverse it to the original state.</p>
+          <a class="popup-img" href="assets/images/Hashing.png">
+            <img src="assets/images/Hashing.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+          <p>TLS uses hashing for authentication and verification of data integrity:
+            <ul>
+              <li>During the handshake phase, computers calculate hash values from the messages they exchange and use them for symmetric key derivation. This practice helps to verify there is no intruder in the handshake. If someone interferes with it, computers will calculate different hash values and encryption keys, which will not let them switch to symmetric cryptography.</li>
+              <li>Hashing is part of the digital signature(link) technology used to authenticate computers during the handshake. </li>
+              <li>Lastly, computers generate hash-based message authentication codes (HMAC) to send along with data in the record phase of the protocol. When a computer receives data, it calculates its hash value and compares it to the HMAC that came with it to validate data integrity. </li>
+            </ul>
+          </p>
+
+          <h3 id="digit_sign">Digital Signatures</h3>
+          <p>Digital signatures combine hashing and asymmetric cryptography. To create a digital signature for data, a computer generates a hash value of this data and encrypts it with its private key. Then, it sends the signature along with the signed data. Knowing the sender’s public key, the receiving computer can decrypt the signature and verify if the hash value matches the hash value it generated for the received data.</p>
+          <a class="popup-img" href="assets/images/DigitalSignatures.png">
+            <img src="assets/images/DigitalSignatures.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+          <p>In TLS 1.3, digital signatures validate SSL/TLS certificates, authenticate the server (and, optionally, the client), and verify the handshake integrity.</p>
+          <ul>
+            <li>Organizations that issue SSL/TLS certificates use digital signatures to prove their validity. A digital signature on an SSL certificate is the hash value of the data in the certificate encrypted with the certificate signer’s private key. When a computer receives the certificate, it decrypts the signature with the signer’s public key and calculates the hash value for the data in the certificate. If it receives the same hash value as the one in the signature, it accepts the SSL/TLS certificate as authentic.</li>
+            <li>An SSL/TLS certificate also includes the public key of the server for which it was issued. During the handshake, the server generates a digital signature over the handshake messages using its private key and sends it to the client along with the SSL certificate. The client in turn extracts the server public key from the certificate and verifies the signature it received belongs to the server. It also compares the hash value it generated over the same handshake messages to the hash value in the signature to verify the handshake integrity.</li>
+          </ul>          
+        </section>
+        
+		<hr class="divider">
+		        
+		<!-- Components
+		============================ -->
+        <section id="components">
+          <h2>TLS Components</h2>
+          <p>TLS mechanisms are set in motion by cryptographic algorithms and protocols that work together to provide a secure key exchange, strong encryption, integrity checks, and trustworthy authentication. Let’s examine each component of the TLS protocol individually.</p>
+          <h3 id="key_exchange">Key Exchange Algorithms</h3>
+          <p>To exchange information, two computers must have the same symmetric encryption keys. They cannot share them openly over a network because a third party can intercept the keys and the data they encrypt if network traffic is compromised. To solve this problem, TLS uses secure key exchange algorithms.</p>
+          <ul>
+            <li>
+              <p>For the initial connection between computers, TLS uses the <b>Diffie-Hellman algorithm</b>. It enables two computers to separately generate the same secret keys using the unencrypted data and public keys they exchange on connection. TLS supports several variations of the Diffie-Hellman protocol, each having different calculation rules and key strength. The computer that initiates the session selects the Diffie-Hellman variation to use based on its settings, and the other computer can accept it or suggest a more appropriate variation.</p>
+              <p>The public-private key pairs and other data used for generating secret keys are ephemeral, which means they are only valid for one key exchange. This feature is called perfect forward secrecy. It ensures that even if intruders record encrypted sessions between computers and then gain access to the secret keys of a session, only one session is affected by the breach, and all previous session data are safe.</p>
+            </li>
+            <li>
+              <p>For resuming previous sessions, TLS supports the <b>Pre-Shared Key (PSK) algorithm</b>. Computers can use it if they have established a secure connection before and store its secret keys and their identities. This protocol takes less time and computing resources but is less secure as it involves previously shared keys.</p>
+            </li>
+            <li>
+              <p>It is also possible to use <b>PSK with the Diffie-Hellman algorithm</b> to provide perfect forward secrecy.</p>
+            </li>
+            </ul>
+            <p>You can set up your computer to support all three algorithms or only use more secure options.</p>
+            <h3 id="cipher_suites">Cipher Suites</h3>
+            <p>Computers know how to work with traffic exchanged over TLS connections because they use the same cryptographic algorithms and protocols called cipher suites. TLS 1.3 supports the following cipher suites:</p>
+            <ul>
+              <li>TLS_AES_256_GCM_SHA384</li>
+              <li>TLS_CHACHA20_POLY1305_SHA256</li>
+              <li>TLS_AES_128_GCM_SHA256</li>
+              <li>TLS_AES_128_CCM_8_SHA256</li>
+              <li>TLS_AES_128_CCM_SHA256</li>
+            </ul>
+            <p>They are normally embedded in computer operating systems; if the required suites are missing, you can add them manually. You can also set them in order by preference.</p>
+            <p>When two computers connect, they compare the cipher suites they have installed and choose one to use for the session. The selected suite defines the bulk encryption method for the record phase and the message authentication code (MAC) and hashing algorithms they will use to ensure data integrity.</p>
+            <h3 id="sign_algorithms">Signature Algorithms</h3>
+            <p>Digital signatures are part of the TLS authentication processes. They involve two algorithms: one for hashing and another for generating a public-private key pair. Computers negotiate them during the handshake as signature algorithms.</p>
+            <p>TLS 1.3 supports the SHA256, SHA384, and SHA512 hashing algorithms for use in digital signatures, while the following algorithms are valid for public key generation:</p>
+            <ul>
+              <li>Rivest-Shamir-Adleman Signature Scheme with Appendix - Public Key Cryptography Standard #1 (RSASSA-PKCS1),</li>
+              <li>Rivest-Shamir-Adleman Signature Scheme with Appendix - Probabilistic Signature Scheme (RSASSA-PSS),</li>
+              <li>Elliptic Curve Digital Signature Algorithm (ECDSA),</li>
+              <li>Edwards-Curve Digital Signature Algorithm (EdDSA).</li>
+            </ul>
+            <p>The former two algorithms are more common, while the latter ones generate digital signatures that work faster. </p>
+            <p>It is possible to use different signature algorithms for the SSL/TLS certificate and the handshake signature. For example, a certificate may have an RSASSA-PKCS1 digital signature and include an ECDSA public key of the server. You define the public key algorithm your server will use for the handshake signature when creating a certificate signing request (CSR). When sending the CSR to a certificate authority, you specify the signature algorithm you prefer for your SSL/TLS certificate. </p>
+            <h3 id="ssl_cert">SSL/TLS Certificates</h3>
+            <p>Computers confirm their identities with the help of SSL/TLS certificates issued by trusted certificate authorities (CA). Why does TLS need them? Before issuing a digital certificate, a CA verifies the person or organization that requests the certificate controls the computer domain name stated in the request. If a fraudulent computer attempts to impersonate a domain to steal its traffic, it won't have a valid certificate, so TLS will detect the discrepancy and interrupt the connection.</p>
+            <p>To confirm the authenticity of SSL/TLS certificates, CAs digitally sign them with their private keys. The public keys of trusted certificate authorities are included in computer operating systems and web browsers. A computer that receives a signed SSL/TLS certificate can decrypt its signature and verify the certificate is authentic so it can also trust the server identity.</p>
+            <div class="accordion arrow-right" id="accordionDefault">
+              <div class="card">
+                <div class="card-header" id="headingChainOfTrust">
+                  <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseChainOfTrust" aria-expanded="false" aria-controls="collapseChainOfTrust">More about certificate authorities...</a> </h5>
+                </div>
+                <div id="collapseChainOfTrust" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionDefault">
+                  <div class="card-body"><p> In fact, there are numerous certificate authorities, and they form a hierarchy with Root CAs at the top, Intermediate CAs in the middle, and Issuing CAs at the bottom. Issuing CAs sign user certificates while they also have their own certificates signed by Intermediate CAs, which in turn have their certificates signed with Root CA private keys. This system is called a chain of trust.</p>
+                    <p>Operation systems and web browsers only include the public keys of Root CAs. When a computer receives an SSL/TLS certificate, it verifies the whole chain of trust and accepts the certificate if it can trace the chain back to the Root CA signature.
+                    </p>
+                    <a class="popup-img" href="assets/images/ChainOfTrust.png">
+                      <img src="assets/images/ChainOfTrust.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+                    </a>
+                </div>
+              </div>
+            </div>
+            <p>Below is the basic lifecycle of an SSL/TLS certificate:</p>
+            <ol>
+              <li><p>First, you use the functionality embedded in your server operating system to generate a Certificate Signing Request (CSR) and send it to a certificate authority. </p>
+              <p>When you create a CSR, you supply your server domain name, and optionally, the details about your organization in it. Your server also generates a pair of encryption keys and includes the public key in the CSR.</p>
+              <div class="accordion arrow-right" id="accordionDefault">
+                <div class="card">
+                  <div class="card-header" id="headingCerTypes">
+                    <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseCerTypes" aria-expanded="false" aria-controls="collapseCerTypes">More about certificate types...</a> </h5>
+                  </div>
+                  <div id="collapseCerTypes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionDefault">
+                    <div class="card-body"><p>The details you provide in the CSR depend on the type of certificate for which you want to apply.</p>
+                      <ul>
+                        <li>Domain Validated (DV) certificates only require the domain name of your server. To issue such certificates, CAs need to check that you control the domain specified in the CSR.</li>
+                        <li>Organization Validated (OV) and Extended Validation (EV) certificates require your organization details, location, and contact information. A CA will not only verify the domain name belongs to the specified organization but also vet the organization identity using the provided details and public registries. For EV certificates, the vetting process is more thorough. </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              </li>
+              <li>When a CA receives your CSR, it verifies the submitted information and binds it with the public key of your server. It also digitally signs the issued certificate with its private key to prove the validity of the certificate. </li>
+              <li>After the CA issues an SSL/TLS certificate from your CSR, it sends the certificate back to you together with the CA’s certificates required to verify the chain of trust.</li>
+              <li>You import the provided certificates onto your server.</li>
+              <li>The server uses the SSL/TLS certificates to confirm its identity during the TLS handshake.</li>
+            </ol>
+            <p>In most cases, only the server is required to provide its SSL/TLS certificate. However, in certain implementations, it may also request the SSL/TLS certificate from the client to verify its identity. This method is called Two-Way SSL or Mutual Authentication and it is used for additional security.</p>
+          </section>
+        
+		<hr class="divider">
+		
+		<!-- Handshake
+		============================ -->
+        <section id="handshake">
+          <h2>TLS Handshake</h2>
+          <p>Computers communicate by sending each other messages. The handshake part of the TLS protocol provides them with guidelines on which messages to send, what to include in them, and how to process them. The initial handshake between a client and a server takes one round trip time (1-RTT) and works in the following way:</p>
+          <ol>
+            <li><p>When the client connects to the server, it generates a one-time public-private key pair and a nonce value and sends the ClientHello message.</p>
+            <p>ClientHello includes the following data:</p>
+            <ul>
+              <li>TLS version of the client,</li>
+              <li>the list of the cipher suites it supports,</li>
+              <li>the variation of the Diffie-Hellman key exchange algorithm it prefers,</li>
+              <li>the client public key generated using the specified algorithm,</li>
+              <li>the nonce value (client random),</li>
+              <li>the supported signature algorithms.</li>
+            </ul>
+            <p>The client also derives Early Secret keys from the data in the ClientHello message. It will store and use these keys for future connections with the same server.</p>
+            </li>
+            <li>
+              <p>The server confirms whether it supports the key exchange and signature algorithms suggested in the ClientHello message and chooses an appropriate cipher suite. If the server accepts the key exchange, it uses it to generate a one-time public-private key pair of its own. It also generates a nonce value (server random).</p>
+              <p class="alert alert-info">In the cases when the server does not support the key exchange used by the client, it suggests an alternative in the HelloRetryRequest. If the client accepts the suggestion, it regenerates the key according to the new algorithm and re-sends the ClientHello message with the new key to the server.</p>
+              <p>The key exchange algorithm works in the way that cross-mixing two public-private key pairs results in the same value on both sides. The server now has the public key of the client and its own private key, so it calculates the shared secret value. </p>
+              <p><span class="p-1 h6 border border-warning rounded">Shared Secret = Private key + Public key of the other computer</span></p>
+              <p>At this stage, the server has part of the ServerHello message that includes:</p>
+              <ul>
+                <li>TLS version,</li>
+                <li>the key exchange algorithm,</li>
+                <li>the server public key generated using the specified algorithm,</li>
+                <li>the server random value.</li>
+              </ul>
+              <p>All messages up to this point a called a Handshake Context. The server calculates the Handshake Context hash value using the hashing algorithm from the selected cipher suite. Then, it derives the symmetric Handshake Secret keys from the Shared Secret and the Handshake Context hash value. </p>
+              <p><span class=" p-1 h6 border border-warning rounded">Handshake Secret keys = Shared Secret + Handshake Context hash</span></p>
+              <p>The server uses the Handshake Secret keys to encrypt the rest of the ServerHello message that includes the following server authentication messages:</p>
+              <ul>
+                <li><p>optionally, the CertificateRequest message (if Mutual Authentication is required),</p></li>
+                <li><p>the Certificate message including the SSL/TLS certificate of the server,</p></li>
+                <li><p>the CertificateVerify message with the digital signature over the handshake messages up to CertificateRequest; it is based on one of the signature algorithms the client specified as supported in the ClientHello message.</p>
+                <p class="alert alert-info">If the client did not specify the public key algorithm of the server as supported in one of the signature algorithms, the connection will be interrupted.</p></li>
+                <li><p>the Finished message that includes the hash-based message authentication code (HMAC) of all messages up to this point (ClientHello…CertificateVerify); the HMAC is generated with the Handshake Secret keys.</p></li>
+              </ul>
+              <p>Now the server generates the hash value of all the messages from the ClientHello to the Finished message and uses it to derive the Master Secret keys to use for bulk encryption.</p>
+              <p><span class=" p-1 h6 border border-warning rounded">Master Secret keys = Shared Secret + ClientHello…Finished message hash</span></p>
+            </li>
+            <li><p>The client uses the public key of the server and its own private key to calculate the shared secret. Then, it generates the Handshake Secret keys using the same components as the server.</p>
+              <p><span class="p-1 h6 border border-warning rounded">Shared Secret = Private key + Public key of the other computer</span></p>
+              <p><span class="p-1 h6 border border-warning rounded">Handshake Secret keys = Shared Secret + Handshake Context hash</span></p>
+              <p>If the message exchange works as expected, the client receives the same Handshake Secret keys and can decrypt the SSL/TLS certificate and the handshake signature to authenticate the server. If Mutual Authentication is required, it also sends the following client authentication messages:</p>
+              <ul>
+                <li>the Certificate message including the SSL/TLS certificate of the client,</li>
+                <li>the CertificateVerify message with the digital signature over the handshake messages up to Certificate; it is based on one of the signature algorithms the client specified as supported in the ClientHello message.</li>
+              </ul>
+              <p>To finalize the handshake phase, the client creates its HMAC of the entire handshake and sends it to the server in the Finished message.</p>
+              <p>Then, it calculates the hash value of all messages from ClientHello to the Finished message of the server and derives the Master Secret keys from it and the shared secret.</p>
+              <p><span class="p-1 h6 border border-warning rounded">Master Secret keys = Shared Secret + ClientHello…Finished message hash</span></p>
+            </li>
+          </ol>
+          <p>As a result of the successful handshake, the device and the server start to exchange their data and use the Master Secret keys to encrypt it.
+            </p>
+          <p>You can review the summarized flow of the basic full handshake in the graphic below. Optional elements are marked with an asterisk (*).</p>
+          <a class="popup-img" href="assets/images/Handshake.png">
+            <img src="assets/images/Handshake.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+        </section>
+        
+		<hr class="divider">
+		
+		<!-- Session Resumption and 0-RTT
+		============================ -->
+        <section id="resumption">
+          <h2>Session Resumption and 0-RTT</h2>
+          <p>The HMAC values that the client and the server exchange during the handshake bind their identities to the secret keys they established. These pre-shared key identities allow them to resume communication sessions without going through the whole handshake process. In this case, computers use the Pre-Shared Key (PSK) or PSK with the Diffie-Hellman exchange algorithm. Pre-shared keys bootstrap the cryptographic state of the previous handshake, so the client and the server do not need to negotiate the cipher suites and exchange the authentication messages again.</p>
+          <p class="alert alert-info">Computers can also use the PSK algorithm if they have pre-shared keys distributed out of band, through a secure channel other than the TLS handshake.</p>
+          <p>Session resumption allows for a faster connection, however, it is less secure because the keys that encrypt the data in the session are not ephemeral. To provide forward secrecy, you can set up the client to send its public key in addition to the PSK in the resumption ClientHello message. This approach lets the server and the client fall back to the full handshake and generate a new shared secret and secret keys for the session if needed.</p>
+          <p>One more way to secure the PSK handshake and protect it from replay attacks is to set up the client to send a nonce value in ClientHello. The server should also be configured to verify that the nonce it receives has not been received before and to interrupt the connection if it receives a duplicate ClientHello.</p>
+          <p>The client can also send its data to the server in the ClientHello message, which reduces the round trip times of the handshake to zero (0-RTT). The client encrypts this data with the Early Secret keys that it derived during the previous handshake. Since these keys are not ephemeral, early data should not be sensitive.</p>
+          <p>You can review the summarized flow of the resumption and 0-RTT handshake in the graphic below. Optional elements are marked with an asterisk (*).</p>
+          <a class="popup-img" href="assets/images/Handshake0rtt.png">
+            <img src="assets/images/Handshake0rtt.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+        </section>
+        
+		<hr class="divider">
+		
+        <!-- Record Protocol
+		============================ -->
+        <section id="record">
+          <h2>Record Protocol</h2>
+          <p>In the TLS record phase, computers exchange traffic in equal-sized chunks called records. To secure the process, they use encryption, authentication, and integrity check algorithms based on the cipher suite they chose during the handshake and adhere to the Authenticated Encryption with Associated Data (AEAD) standard.</p>
+          <p>A record consists of a header and a payload. The payload includes the actual data encrypted with the shared Master Secret keys and authenticated with hash-based message authentication codes (HMAC), while the header is sent in the open and includes the associated metadata.</p>
+          <p>For each record, a computer also generates a nonce value known as an initialization vector (IV). It uses the IV value in conjunction with the Master Secret keys to encrypt the record payload and generate a message authentication code (MAC) for it. It also includes IV in the header so that the other computer can use it for decryption and MAC verification.</p>
+          <p>Before sending a record out, a computer does the following:</p>
+          <ol>
+            <li>Encrypts the record payload using the Master Secret keys and an IV.</li>
+            <li>Generates a message authentication code (MAC) from the encrypted payload and unencrypted header.</li>
+            <li>Hashes the MAC, which results in the HMAC value of the record.</li>
+            <li>Attaches the HMAC value to the encrypted payload and sends it along with the record header.</li>
+          </ol>
+          <p>In this scheme, the record is encrypted with symmetric keys, authenticated with an HMAC, and it also includes associated unencrypted data in the header.</p>
+          <a class="popup-img" href="assets/images/AEAD.png">
+            <img src="assets/images/AEAD.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+          <p>When the other computer receives the record, it runs the following procedures:</p>
+          <ol>
+            <li>Detaches the HMAC value from the payload.</li>
+            <li>Calculates its own HMAC from encrypted data and the record header.</li>
+            <li>Verifies the calculated HMAC matches the value it received in the record.</li>
+          </ol>
+          <p>If the values match, it can be sure that it received the record from the intended sender, and that the data in the payload was not changed during the transmission. Associated data in the header and IV help to verify that the record is not duplicate, which means there is no intruder trying to replay an old message.</p>
+          <a class="popup-img" href="assets/images/AEADReverse.png">
+            <img src="assets/images/AEADReverse.png" class="img-fluid img-thumbnail" width="40%" alt="image">
+          </a>
+        </section>
+		
+        
+		<hr class="divider">
+		
+    </div>
+
+  </div>
+
+  <!-- Back To Top --> 
+  <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+  
+  <!<!-- Footer
+    ============================ -->
+    <footer id="footer" class="section bg-light-1 footer-text-dark-1">
+      <div class="container">
+      <p class="text-2 text-center mb-0"> HTML Template Design &amp; Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a>.</p>
+      <p class="text-center">Copyright &copy; 2020 <a href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a>. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+<!-- JavaScript
+============================ -->
+<script src="assets/vendor/jquery/jquery.min.js"></script> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<!-- Highlight JS -->
+<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
+<!-- Easing --> 
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
+<!-- Custom Script -->
+<script src="assets/js/theme.js"></script>
+</body>
+</html>
