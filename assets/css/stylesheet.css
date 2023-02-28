@@ -759,7 +759,7 @@ hr {
 
 @media (max-width: 767.98px) {
   .idocs-navigation {
-    margin-left: -260px;
+    margin-left: -310px;
   }
   .idocs-navigation.active {
     margin-left: 0;
