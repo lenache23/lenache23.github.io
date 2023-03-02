@@ -134,8 +134,8 @@
         <h2>Protocol Structure</h2>
         <p>Before two computers start exchanging information, they need to establish a connection and verify they can communicate securely. To accommodate that, the TLS protocol includes two phases:</p>
         <ul>
-          <li>In the <b>handshake</b> phase, computers negotiate cryptographic parameters, generate encryption keys, and perform authentication.</li>
-          <li>In the <b>record</b> phase, computers use the parameters established during the handshake to encrypt the data they exchange and verify its integrity. </li>
+          <li>In the <a href="#handshake"><b>handshake</b></a> phase, computers negotiate cryptographic parameters, generate encryption keys, and perform authentication.</li>
+          <li>In the <a href="#record"><b>record</b></a> phase, computers use the parameters established during the handshake to encrypt the data they exchange and verify its integrity. </li>
         </ul>
         <p>The computers that exchange information over a TLS connection are usually referred to as client and server, and client is the computer that initiates communication. 
         </p>
@@ -152,11 +152,11 @@
           <p>Asymmetric cryptography, or public key cryptography, is based on two mathematically related keys – a private and a public key. The public key can be shared with others while the private key is always kept a secret. TLS uses asymmetric keys in the handshake phase for the following  purposes:
           </p>
           <ul>
-            <li><p>In the course of the Diffie-Hellman key exchange algorithm, computers exchange their public keys, and then each of them generates the same shared secret value from its private key and the public key of the other computer.</p>
+            <li><p>In the course of the Diffie-Hellman <a href="#key_exchange">key exchange algorithm</a>, computers exchange their public keys, and then each of them generates the same shared secret value from its private key and the public key of the other computer.</p>
               <a class="popup-img" href="assets/images/DiffieHellman.png">
                 <img src="assets/images/DiffieHellman.png" class="img-fluid img-thumbnail" width="40%" alt="image">
               </a>
-            <li><p>Computers authenticate themselves with the help of digital signatures (link) generated with their private keys. They also distribute their public keys to other entities. Public keys are used to verify digital signatures created with the related private keys. In this case, private keys encrypt data and public keys decrypt it.</p>
+            <li><p>Computers authenticate themselves with the help of <a xref="digit_sign">digital signatures</a> generated with their private keys. They also distribute their public keys to other entities. Public keys are used to verify digital signatures created with the related private keys. In this case, private keys encrypt data and public keys decrypt it.</p>
               <a class="popup-img" href="assets/images/DigitalSignGeneral.png">
                 <img src="assets/images/DigitalSignGeneral.png" class="img-fluid img-thumbnail" width="40%" alt="image">
               </a>
@@ -176,13 +176,13 @@
           <p>TLS uses hashing for authentication and verification of data integrity:
             <ul>
               <li>During the handshake phase, computers calculate hash values from the messages they exchange and use them for symmetric key derivation. This practice helps to verify there is no intruder in the handshake. If someone interferes with it, computers will calculate different hash values and encryption keys, which will not let them switch to symmetric cryptography.</li>
-              <li>Hashing is part of the digital signature(link) technology used to authenticate computers during the handshake. </li>
+              <li>Hashing is part of the <a href="#digit_sign">digital signature</a> technology used to authenticate computers during the handshake. </li>
               <li>Lastly, computers generate hash-based message authentication codes (HMAC) to send along with data in the record phase of the protocol. When a computer receives data, it calculates its hash value and compares it to the HMAC that came with it to validate data integrity. </li>
             </ul>
           </p>
 
           <h3 id="digit_sign">Digital Signatures</h3>
-          <p>Digital signatures combine hashing and asymmetric cryptography. To create a digital signature for data, a computer generates a hash value of this data and encrypts it with its private key. Then, it sends the signature along with the signed data. Knowing the sender’s public key, the receiving computer can decrypt the signature and verify if the hash value matches the hash value it generated for the received data.</p>
+          <p>Digital signatures combine <a href="#hashing">hashing</a> and <a href="#asymmetric">asymmetric cryptography</a>. To create a digital signature for data, a computer generates a hash value of this data and encrypts it with its private key. Then, it sends the signature along with the signed data. Knowing the sender’s public key, the receiving computer can decrypt the signature and verify if the hash value matches the hash value it generated for the received data.</p>
           <a class="popup-img" href="assets/images/DigitalSignatures.png">
             <img src="assets/images/DigitalSignatures.png" class="img-fluid img-thumbnail" width="40%" alt="image">
           </a>
@@ -239,7 +239,7 @@
             <p>It is possible to use different signature algorithms for the SSL/TLS certificate and the handshake signature. For example, a certificate may have an RSASSA-PKCS1 digital signature and include an ECDSA public key of the server. You define the public key algorithm your server will use for the handshake signature when creating a certificate signing request (CSR). When sending the CSR to a certificate authority, you specify the signature algorithm you prefer for your SSL/TLS certificate. </p>
             <h3 id="ssl_cert">SSL/TLS Certificates</h3>
             <p>Computers confirm their identities with the help of SSL/TLS certificates issued by trusted certificate authorities (CA). Why does TLS need them? Before issuing a digital certificate, a CA verifies the person or organization that requests the certificate controls the computer domain name stated in the request. If a fraudulent computer attempts to impersonate a domain to steal its traffic, it won't have a valid certificate, so TLS will detect the discrepancy and interrupt the connection.</p>
-            <p>To confirm the authenticity of SSL/TLS certificates, CAs digitally sign them with their private keys. The public keys of trusted certificate authorities are included in computer operating systems and web browsers. A computer that receives a signed SSL/TLS certificate can decrypt its signature and verify the certificate is authentic so it can also trust the server identity.</p>
+            <p>To confirm the authenticity of SSL/TLS certificates, CAs <a href="#digit_sign">digitally sign</a> them with their private keys. The public keys of trusted certificate authorities are included in computer operating systems and web browsers. A computer that receives a signed SSL/TLS certificate can decrypt its signature and verify the certificate is authentic so it can also trust the server identity.</p>
             <div class="accordion arrow-right" id="accordionDefault">
               <div class="card">
                 <div class="card-header" id="headingChainOfTrust">
@@ -294,11 +294,11 @@
             <p>ClientHello includes the following data:</p>
             <ul>
               <li>TLS version of the client,</li>
-              <li>the list of the cipher suites it supports,</li>
-              <li>the variation of the Diffie-Hellman key exchange algorithm it prefers,</li>
+              <li>the list of the <a href="#cipher_suites">cipher suites</a> it supports,</li>
+              <li>the variation of the Diffie-Hellman <a href="#key_exchange">key exchange algorithm</a> it prefers,</li>
               <li>the client public key generated using the specified algorithm,</li>
               <li>the nonce value (client random),</li>
-              <li>the supported signature algorithms.</li>
+              <li>the supported <a href="#sign_algorithms">signature algorithms</a>.</li>
             </ul>
             <p>The client also derives Early Secret keys from the data in the ClientHello message. It will store and use these keys for future connections with the same server.</p>
             </li>
@@ -310,7 +310,8 @@
               <p>At this stage, the server has part of the ServerHello message that includes:</p>
               <ul>
                 <li>TLS version,</li>
-                <li>the key exchange algorithm,</li>
+                <li>the selected <a href="#cipher_suites">cipher suite</a>,</li>
+                <li>the <a href="#key_exchange">key exchange algorithm</a>,</li>
                 <li>the server public key generated using the specified algorithm,</li>
                 <li>the server random value.</li>
               </ul>
