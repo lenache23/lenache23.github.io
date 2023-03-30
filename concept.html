@@ -308,7 +308,7 @@
             <li>
               <p>The server confirms whether it supports the key exchange and signature algorithms suggested in the ClientHello message and chooses an appropriate cipher suite. If the server accepts the key exchange, it uses it to generate a one-time public-private key pair of its own. It also generates a nonce value (server random).</p>
               <p class="alert alert-info">In the cases when the server does not support the key exchange used by the client, it suggests an alternative in the HelloRetryRequest. If the client accepts the suggestion, it regenerates the key according to the new algorithm and re-sends the ClientHello message with the new key to the server.</p>
-              <p>The key exchange algorithm works in the way that cross-mixing two public-private key pairs results in the same value on both sides. The server now has the public key of the client and its own private key, so it calculates the shared secret value. </p>
+              <p>The key exchange algorithm works in the way that cross-mixing two public-private key pairs results in the same value on both sides. The server now has the public key of the client and its own private key, so it calculates the Shared Secret value. </p>
               <p><span class="p-1 h6 border border-warning rounded">Shared Secret = Private key + Public key of the other computer</span></p>
               <p>At this stage, the server has part of the ServerHello message that includes:</p>
               <ul>
@@ -331,7 +331,7 @@
               <p>Now the server generates the hash value of all the messages from the ClientHello to the Finished message and uses it to derive the Master Secret keys to use for bulk encryption.</p>
               <p><span class=" p-1 h6 border border-warning rounded">Master Secret keys = Shared Secret + ClientHello…Finished message hash</span></p>
             </li>
-            <li><p>The client uses the public key of the server and its own private key to calculate the shared secret. Then, it generates the Handshake Secret keys using the same components as the server.</p>
+            <li><p>The client uses the public key of the server and its own private key to calculate the Shared Secret. Then, it generates the Handshake Secret keys using the same components as the server.</p>
               <p><span class="p-1 h6 border border-warning rounded">Shared Secret = Private key + Public key of the other computer</span></p>
               <p><span class="p-1 h6 border border-warning rounded">Handshake Secret keys = Shared Secret + Handshake Context hash</span></p>
               <p>If the message exchange works as expected, the client receives the same Handshake Secret keys and can decrypt the SSL/TLS certificate and the handshake signature to authenticate the server. If Mutual Authentication is required, it also sends the following client authentication messages:</p>
@@ -340,7 +340,7 @@
                 <li>the CertificateVerify message with the digital signature over the handshake messages up to Certificate; it is based on one of the signature algorithms the client specified as supported in the ClientHello message.</li>
               </ul>
               <p>To finalize the handshake phase, the client creates its HMAC of the entire handshake and sends it to the server in the Finished message.</p>
-              <p>Then, it calculates the hash value of all messages from ClientHello to the Finished message of the server and derives the Master Secret keys from it and the shared secret.</p>
+              <p>Then, it calculates the hash value of all messages from ClientHello to the Finished message of the server and derives the Master Secret keys from it and the Shared Secret.</p>
               <p><span class="p-1 h6 border border-warning rounded">Master Secret keys = Shared Secret + ClientHello…Finished message hash</span></p>
             </li>
           </ol>
@@ -360,7 +360,7 @@
           <h2>Session Resumption and 0-RTT</h2>
           <p>The HMAC values that the client and the server exchange during the handshake bind their identities to the secret keys they established. These pre-shared key identities allow them to resume communication sessions without going through the whole handshake process. In this case, computers use the Pre-Shared Key (PSK) or PSK with the Diffie-Hellman exchange algorithm. Pre-shared keys bootstrap the cryptographic state of the previous handshake, so the client and the server do not need to negotiate the cipher suites and exchange the authentication messages again.</p>
           <p class="alert alert-info">Computers can also use the PSK algorithm if they have pre-shared keys distributed out of band, through a secure channel other than the TLS handshake.</p>
-          <p>Session resumption allows for a faster connection, however, it is less secure because the keys that encrypt the data in the session are not ephemeral. To provide forward secrecy, you can set up the client to send its public key in addition to the PSK in the resumption ClientHello message. This approach lets the server and the client fall back to the full handshake and generate a new shared secret and secret keys for the session if needed.</p>
+          <p>Session resumption allows for a faster connection, however, it is less secure because the keys that encrypt the data in the session are not ephemeral. To provide forward secrecy, you can set up the client to send its public key in addition to the PSK in the resumption ClientHello message. This approach lets the server and the client fall back to the full handshake and generate a new Shared Secret and secret keys for the session if needed.</p>
           <p>One more way to secure the PSK handshake and protect it from replay attacks is to set up the client to send a nonce value in ClientHello. The server should also be configured to verify that the nonce it receives has not been received before and to interrupt the connection if it receives a duplicate ClientHello.</p>
           <p>The client can also send its data to the server in the ClientHello message, which reduces the round trip times of the handshake to zero (0-RTT). The client encrypts this data with the Early Secret keys that it derived during the previous handshake. Since these keys are not ephemeral, early data should not be sensitive.</p>
           <p>You can review the summarized flow of the resumption and 0-RTT handshake in the graphic below. Optional elements are marked with an asterisk (*).</p>
