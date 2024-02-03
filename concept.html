@@ -125,7 +125,7 @@
         </ul>
         <p class="alert alert-info">The TLS protocol is developed and maintained by the Internet Engineering Task Force (IETF) organization that defines best practices in network security and publishes them in documents called RFC (or Request for Comment). You can find the full specification of TLS 1.3 in RFC 8446 (<a href="url">https://www.rfc-editor.org/rfc/rfc8446</a>).
         </p>
-        <p>Let’s look into the main ideas, components, and mechanisms behind TLS 1.3, the most recent and secure version of the protocol. </p>
+        <p>Let's look into the main ideas, components, and mechanisms behind TLS 1.3, the most recent and secure version of the protocol. </p>
         </section>
       <hr class="divider"> 
 
@@ -185,13 +185,13 @@
           </p>
 
           <h3 id="digit_sign">Digital Signatures</h3>
-          <p>Digital signatures combine <a href="#hashing">hashing</a> and <a href="#asymmetric">asymmetric cryptography</a>. To create a digital signature for data, a computer generates a hash value of this data and encrypts it with its private key. Then, it sends the signature along with the signed data. Knowing the sender’s public key, the receiving computer can decrypt the signature and verify if the hash value matches the hash value it generated for the received data.</p>
+          <p>Digital signatures combine <a href="#hashing">hashing</a> and <a href="#asymmetric">asymmetric cryptography</a>. To create a digital signature for data, a computer generates a hash value of this data and encrypts it with its private key. Then, it sends the signature along with the signed data. Knowing the sender's public key, the receiving computer can decrypt the signature and verify if the hash value matches the hash value it generated for the received data.</p>
           <a class="popup-img" href="assets/images/DigitalSignatures.png">
             <img src="assets/images/DigitalSignatures.png" class="img-fluid img-thumbnail" width="40%" alt="image">
           </a>
           <p>In TLS 1.3, digital signatures validate SSL/TLS certificates, authenticate the server (and, optionally, the client), and verify the handshake integrity.</p>
           <ul>
-            <li>Organizations that issue SSL/TLS certificates use digital signatures to prove their validity. A digital signature on an SSL certificate is the hash value of the data in the certificate encrypted with the certificate signer’s private key. When a computer receives the certificate, it decrypts the signature with the signer’s public key and calculates the hash value for the data in the certificate. If it receives the same hash value as the one in the signature, it accepts the SSL/TLS certificate as authentic.</li>
+            <li>Organizations that issue SSL/TLS certificates use digital signatures to prove their validity. A digital signature on an SSL certificate is the hash value of the data in the certificate encrypted with the certificate signer's private key. When a computer receives the certificate, it decrypts the signature with the signer's public key and calculates the hash value for the data in the certificate. If it receives the same hash value as the one in the signature, it accepts the SSL/TLS certificate as authentic.</li>
             <li>An SSL/TLS certificate also includes the public key of the server for which it was issued. During the handshake, the server generates a digital signature over the handshake messages using its private key and sends it to the client along with the SSL certificate. The client in turn extracts the server public key from the certificate and verifies the signature it received belongs to the server. It also compares the hash value it generated over the same handshake messages to the hash value in the signature to verify the handshake integrity.</li>
           </ul>          
         </section>
@@ -202,7 +202,7 @@
 		============================ -->
         <section id="components">
           <h2>TLS Components</h2>
-          <p>TLS mechanisms are set in motion by cryptographic algorithms and protocols that work together to provide a secure key exchange, strong encryption, integrity checks, and trustworthy authentication. Let’s examine each component of the TLS protocol individually.</p>
+          <p>TLS mechanisms are set in motion by cryptographic algorithms and protocols that work together to provide a secure key exchange, strong encryption, integrity checks, and trustworthy authentication. Let's examine each component of the TLS protocol individually.</p>
           <h3 id="key_exchange">Key Exchange Algorithms</h3>
           <p>To exchange information, two computers must have the same symmetric encryption keys. They cannot share them openly over a network because a third party can intercept the keys and the data they encrypt if network traffic is compromised. To solve this problem, TLS uses secure key exchange algorithms.</p>
           <ul>
@@ -278,7 +278,7 @@
               </div>
               </li>
               <li>When a CA receives your CSR, it verifies the submitted information and binds it with the public key of your server. It also digitally signs the issued certificate with its private key to prove the validity of the certificate. </li>
-              <li>After the CA issues an SSL/TLS certificate from your CSR, it sends the certificate back to you together with the CA’s certificates required to verify the chain of trust.</li>
+              <li>After the CA issues an SSL/TLS certificate from your CSR, it sends the certificate back to you together with the CA's certificates required to verify the chain of trust.</li>
               <li>You import the provided certificates onto your server.</li>
               <li>The server uses the SSL/TLS certificates to confirm its identity during the TLS handshake.</li>
             </ol>

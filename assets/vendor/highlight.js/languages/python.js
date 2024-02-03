@@ -130,7 +130,7 @@ export default function(hljs) {
         begin: /^[\t ]*@/, end: /$/
       },
       {
-        begin: /\b(print|exec)\(/ // don’t highlight keywords-turned-functions in Python 3
+        begin: /\b(print|exec)\(/ // don't highlight keywords-turned-functions in Python 3
       }
     ]
   };

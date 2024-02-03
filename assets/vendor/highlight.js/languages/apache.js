@@ -37,7 +37,7 @@ export default function(hljs) {
         className: 'attribute',
         begin: /\w+/,
         relevance: 0,
-        // keywords aren’t needed for highlighting per se, they only boost relevance
+        // keywords aren't needed for highlighting per se, they only boost relevance
         // for a very generally defined mode (starts with a word, ends with line-end
         keywords: {
           nomarkup:
